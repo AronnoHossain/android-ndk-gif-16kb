@@ -6,7 +6,7 @@ android {
     namespace 'com.waynejo.androidndkgif'
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 21
         targetSdkVersion 34
         
         consumerProguardFiles 'consumer-rules.pro'
@@ -16,24 +16,38 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     externalNativeBuild {
         cmake {
             path "jni/CMakeLists.txt"
             version "3.22.1"
         }
     }
+
+    // Tell the Android plugin to create a publication for the "release" build variant.
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId = 'com.github.AronnoHossain'
-                artifactId = 'android-ndk-gif-16kb'
-                version = '1.0'
-            }
+publishing {
+    publications {
+        // This publication is now automatically linked to the "release" variant by the
+        // android.publishing block above.
+        release(MavenPublication) {
+            groupId = 'com.github.AronnoHossain'
+            artifactId = 'android-ndk-gif-16kb'
+            // The version will be taken from the Git tag by JitPack
+            version = '1.0.0'
         }
+    }
+    repositories {
+        mavenLocal()
     }
 }
