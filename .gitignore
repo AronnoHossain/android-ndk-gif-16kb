@@ -29,3 +29,5 @@ proguard/
 #Intellij
 .idea
 obj
+
+.cxx/
