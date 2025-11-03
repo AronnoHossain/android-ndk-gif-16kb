@@ -1,0 +1,3 @@
+rootProject.name = "android-ndk-gif-16kb"
+include ':androidndkgif'
+project(':androidndkgif').projectDir = file('library/androidndkgif')
