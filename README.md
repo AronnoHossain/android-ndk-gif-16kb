@@ -26,15 +26,26 @@ Encoding Option
 How to use
 ========
 
-Remote repository
+JitPack (16KB alignment)
 --------
 
 ```groovy
-...
 
 repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.AronnoHossain:android-ndk-gif-16kb:1.0.2'
+}
+```
+
+Maven Central (Original)
+--------
+
+```groovy
+repositories {
     maven { url 'https://repo1.maven.org/maven2' }
-    ...
 }
 
 dependencies {
