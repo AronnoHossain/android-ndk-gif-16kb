@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 34
@@ -19,6 +20,20 @@ android {
         cmake {
             path "jni/CMakeLists.txt"
             version "3.22.1"
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.AronnoHossain'
+                artifactId = 'android-ndk-gif-16kb'
+                version = '1.0'
+            }
         }
     }
 }
