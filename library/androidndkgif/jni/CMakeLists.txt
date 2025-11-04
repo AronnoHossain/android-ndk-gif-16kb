@@ -24,3 +24,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Link to jnigraphics
 find_library(jnigraphics-lib jnigraphics)
 target_link_libraries(androidndkgif ${jnigraphics-lib})
+
+# Workaround for a bug where flexible page size support is not always applied
+# to armeabi-v7a automatically. Manually add the linker flag for this ABI.
+if(ANDROID_ABI STREQUAL "armeabi-v7a")
+    target_link_options(androidndkgif PRIVATE "-Wl,-z,max-page-size=16384")
+endif()
