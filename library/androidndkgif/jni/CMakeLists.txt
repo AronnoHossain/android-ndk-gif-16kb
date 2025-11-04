@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 
+project(androidndkgif)
+
 add_library(androidndkgif SHARED
             DataBlock.cpp
             BitmapIterator.cpp
