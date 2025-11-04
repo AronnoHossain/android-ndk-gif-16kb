@@ -26,7 +26,7 @@ Encoding Option
 How to use
 ========
 
-JitPack (16KB alignment)
+JitPack (16KB alignment) [![](https://jitpack.io/v/AronnoHossain/android-ndk-gif-16kb.svg)](https://jitpack.io/#AronnoHossain/android-ndk-gif-16kb)
 --------
 
 ```groovy
