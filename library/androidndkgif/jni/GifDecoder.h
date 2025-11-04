@@ -33,7 +33,7 @@ class GifDecoder
 {
 	friend class BitmapIterator;
 private:
-	static const int32_t MAX_STACK_SIZE = 16384;
+	static const int32_t MAX_STACK_SIZE = 4096;
 
 	std::vector<GifFrame> frames;
 	uint16_t width;

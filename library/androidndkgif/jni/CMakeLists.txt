@@ -24,6 +24,3 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Link to jnigraphics
 find_library(jnigraphics-lib jnigraphics)
 target_link_libraries(androidndkgif ${jnigraphics-lib})
-
-# Add linker flag for page size alignment
-target_link_options(androidndkgif PRIVATE "-Wl,-z,max-page-size=16384")

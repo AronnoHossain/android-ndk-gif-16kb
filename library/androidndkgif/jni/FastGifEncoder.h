@@ -49,7 +49,7 @@ struct WorkerThreadData
 
 class FastGifEncoder : public BaseGifEncoder
 {
-	static const int32_t MAX_STACK_SIZE = 16384;
+	static const int32_t MAX_STACK_SIZE = 4096;
 	static const int32_t BYTE_NUM = 256;
 	static const int32_t MAX_THREADS = 8;
 
