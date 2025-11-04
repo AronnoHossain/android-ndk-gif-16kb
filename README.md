@@ -3,11 +3,6 @@ Android NDK GIF Library
 
 GIF library built with ndk and gradle in aar format for usage with android gradle build system.
 
-1.0.1 Change Log
-========
-* Added Gif Image Iterator for Image decoding.
-* Fixed a problem of residual image on transparent background.
-
 Encoding Option
 ========
  - ENCODING_TYPE_SIMPLE_FAST 
