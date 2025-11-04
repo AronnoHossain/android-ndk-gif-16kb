@@ -5,6 +5,13 @@ android {
     compileSdkVersion 34
     namespace 'com.waynejo.androidndkgif'
 
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            jni.srcDirs = ['jni']
+        }
+    }
+
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 34
@@ -28,7 +35,6 @@ android {
         }
     }
 
-    // Tell the Android plugin to create a publication for the "release" build variant.
     publishing {
         singleVariant("release") {
             withSourcesJar()
@@ -38,12 +44,9 @@ android {
 
 publishing {
     publications {
-        // This publication is now automatically linked to the "release" variant by the
-        // android.publishing block above.
         release(MavenPublication) {
             groupId = 'com.github.AronnoHossain'
             artifactId = 'android-ndk-gif-16kb'
-            // The version will be taken from the Git tag by JitPack
             version = '1.0.0'
         }
     }

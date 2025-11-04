@@ -58,7 +58,7 @@ public class GifDecoder {
     public boolean load(String fileName) {
         long handle = nativeInit();
         if (!nativeLoad(handle, fileName)) {
-            nativeClose(handle);
+            nativeClose(handle); 
             return false;
         }
         width = nativeGetWidth(handle);
