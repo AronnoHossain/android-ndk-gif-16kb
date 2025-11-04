@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.AronnoHossain:android-ndk-gif-16kb:1.0.2'
+    implementation 'com.github.AronnoHossain:android-ndk-gif-16kb:1.0.4'
 }
 ```
 
